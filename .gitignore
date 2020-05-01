@@ -1,0 +1,13 @@
+# typescript
+lib
+
+# parcel
+.cache
+
+# js
+node_modules
+
+# emacs
+*~
+*#*
+.#*

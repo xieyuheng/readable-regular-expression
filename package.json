@@ -1,0 +1,19 @@
+{
+  "name": "@forchange/readable-regular-expression",
+  "publishConfig": {
+    "registry": "https://nexus.forchange.cn/repository/npm-private/"
+  },
+  "main": "lib/main.js",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npx tsc",
+    "watch": "npx tsc --watch"
+  },
+  "devDependencies": {
+    "@types/assert": "^1.4.6",
+    "@types/node": "^13.11.1",
+    "ts-node": "^8.9.1",
+    "typedoc": "^0.17.4",
+    "typescript": "^3.8.3"
+  }
+}
