@@ -1,1 +1,10 @@
+export * from "./create"
+export * from "./charset"
+export * from "./quantifier"
+export * from "./boundary"
+export * from "./operator"
+export * from "./range"
+export * from "./capture"
+export * as flag from "./flag"
+
 export * as util from "./util"

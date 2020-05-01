@@ -1,3 +1,3 @@
 export * from "./index"
-import * as rre from "./index"
-export default rre
+import * as rr from "./index"
+export default rr

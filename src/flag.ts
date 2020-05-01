@@ -1,0 +1,6 @@
+export const global = "g"
+export const ignoreCase = "i"
+export const multiline = "m"
+export const dotAll = "s"
+export const unicode = "u"
+export const sticky = "y"
