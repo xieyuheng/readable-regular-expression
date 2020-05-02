@@ -55,7 +55,7 @@ for (const sentence of sentences)
   - 谢宇恒 / Xie Yuheng
     - Developing environment:
       - OS: archlinux
-      - node: v13.13.0
+      - node: v14.1.0
       - yarn: 1.22.4
 
 ## Community
