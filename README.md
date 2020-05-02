@@ -4,8 +4,13 @@ Make regular expression **Readable** again!
 
 ## Documents
 
-``` typescript
-import rr from "@forchange/readable-regular-expression"
+### Quick start (in nodejs)
+
+``` javascript
+const rr = require("@forchange/readable-regular-expression")
+
+// NOTE Enter your phone number.
+//   The expected format is like: `###-###-####`
 
 const sep   = rr.group(/[-\/\.]/)
 const three = rr.exactly(3, rr.digit)
@@ -17,15 +22,31 @@ const re =
       three,
       rr.seq(
         rr.escape("("),
-        rr.group(three),
+        three,
         rr.escape(")"))),
     sep, three, sep, four)
 
-const non_readable =
+const expected =
   /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
+
+assert(re.source === expected.source)
+
+const sentences = [
+  "123-123-1234",
+  "123-123-1234",
+  "123.123.1234",
+  "(123)-123-1234",
+  "123/123/1234",
+  "(123)/123.1234",
+]
+
+for (const sentence of sentences)
+  assert(re.exec(sentence))
 ```
 
-- More examples: [src/examples](https://git.forchange.cn/cleword/explore/readable-regular-expression/-/tree/master/src/examples)
+### More examples
+
+- [src/examples](https://git.forchange.cn/cleword/explore/readable-regular-expression/-/tree/master/src/examples)
 
 ## Development
 
