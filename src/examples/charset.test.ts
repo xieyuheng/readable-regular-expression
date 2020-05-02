@@ -37,7 +37,7 @@ import * as util from "../util"
 {
   const non_english_text = "Приключения Алисы в Стране чудес";
   const re = /([\u0000-\u0019\u0021-\uFFFF])+/gu;
-  // NOTE BMP goes through U+0000 to U+FFFF but space is U+0020
+  // BMP goes through U+0000 to U+FFFF but space is U+0020
   assert(
     util.equal(
       non_english_text.match(re),
