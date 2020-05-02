@@ -7,7 +7,7 @@
   resolved "https://nexus.forchange.cn/repository/npm-group/@types/assert/-/assert-1.4.6.tgz#deb4788a16621e39f28aab166fb62c3d79df24b9"
   integrity sha1-3rR4ihZiHjnyiqsWb7YsPXnfJLk=
 
-"@types/node@^13.11.1":
+"@types/node@^13.13.4":
   version "13.13.4"
   resolved "https://nexus.forchange.cn/repository/npm-group/@types/node/-/node-13.13.4.tgz#1581d6c16e3d4803eb079c87d4ac893ee7501c2c"
   integrity sha1-FYHWwW49SAPrB5yH1KyJPudQHCw=
@@ -241,7 +241,7 @@ typedoc-default-themes@^0.10.1:
   dependencies:
     lunr "^2.3.8"
 
-typedoc@^0.17.4:
+typedoc@^0.17.6:
   version "0.17.6"
   resolved "https://nexus.forchange.cn/repository/npm-group/typedoc/-/typedoc-0.17.6.tgz#cab87a72c10e05429016d659a4c3071a5a3ffb61"
   integrity sha1-yrh6csEOBUKQFtZZpMMHGlo/+2E=
