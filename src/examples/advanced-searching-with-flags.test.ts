@@ -10,6 +10,16 @@ const re = rr.add_flag(word_space, rr.flags.global)
 const expected = /\w+\s/g;
 assert(re.source === expected.source)
 
-const str = "fee fi fo fum";
+const str = "fee  fi  fo  fum";
 const results = str.match(re)
 assert(util.equal(results, ["fee ", "fi ", "fo "]))
+
+{
+  let results: null | RegExpExecArray = null
+  do {
+    // NOTE `re.exec` will do side effect on `re.lastIndex`
+    results = re.exec(str)
+    console.log("results   :", results)
+    console.log("lastIndex :", re.lastIndex)
+  } while (results)
+}
