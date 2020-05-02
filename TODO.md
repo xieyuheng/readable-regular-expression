@@ -1,1 +1,10 @@
-- more examples.
+- Unicode property escapes
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
+  - https://2ality.com/2017/07/regexp-unicode-property-escapes.html
+  - https://en.wikipedia.org/wiki/Unicode_character_property
+- Quantifiers
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers
+- Groups and ranges
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges
+- Assertions
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions
