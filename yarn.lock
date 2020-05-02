@@ -50,6 +50,11 @@ diff@^4.0.1:
   resolved "https://nexus.forchange.cn/repository/npm-group/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
   integrity sha1-YPOuy4nV+uUgwRqhnvwruYKq3n0=
 
+fast-deep-equal@^3.1.1:
+  version "3.1.1"
+  resolved "https://nexus.forchange.cn/repository/npm-group/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
+  integrity sha1-VFFFB3xQFJHjOxXsQIwpQ3bpSuQ=
+
 fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://nexus.forchange.cn/repository/npm-group/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"

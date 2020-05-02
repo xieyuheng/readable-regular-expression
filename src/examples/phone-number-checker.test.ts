@@ -1,5 +1,5 @@
-import rr from "../main"
 import assert from "assert"
+import rr from "../main"
 
 // NOTE Enter your phone number.
 //   The expected format is like: `###-###-####`
@@ -15,7 +15,8 @@ const re =
       rr.seq(rr.escape("("), rr.group(three), rr.escape(")"))),
     sep, three, sep, four)
 
-const expected = /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
+const expected =
+  /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
 
 // assert(re.source === expected.source)
 

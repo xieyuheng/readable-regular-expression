@@ -15,5 +15,8 @@
     "ts-node": "^8.9.1",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "fast-deep-equal": "^3.1.1"
   }
 }

@@ -1,3 +1,4 @@
+export * from "./equal"
 export * from "./string-predicate"
 export * from "./string-function"
 export * from "./string-repr"

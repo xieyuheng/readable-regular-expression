@@ -5,9 +5,12 @@ import assert from "assert"
 
 const bs = rr.one_or_more(/b/)
 const dbsd = rr.seq(/d/, rr.group(bs), /d/)
-const re = rr.add_flag(dbsd, rr.flag.global)
+const re = rr.add_flag(dbsd, rr.flags.global)
 
-assert(re.source === /d(b+)d/g.source)
+const expected =
+  /d(b+)d/g;
+
+assert(re.source === expected.source)
 
 const results = re.exec("cdbbdbsbz")
 
