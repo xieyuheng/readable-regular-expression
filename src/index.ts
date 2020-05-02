@@ -1,10 +1,11 @@
 export * from "./create"
-export * from "./charset"
-export * from "./quantifier"
-export * from "./boundary"
-export * from "./operator"
-export * from "./range"
-export * from "./capture"
-export * as flag from "./flag"
+
+export * from "./primitive/charset"
+export * from "./primitive/boundary"
+export * from "./primitive/range"
+
+export * from "./combination/quantifier"
+export * from "./combination/operator"
+export * from "./combination/capture"
 
 export * as util from "./util"
