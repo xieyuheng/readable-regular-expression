@@ -14,14 +14,14 @@ const re =
       three,
       rr.seq(
         rr.escape("("),
-        rr.group(three),
+        three,
         rr.escape(")"))),
     sep, three, sep, four)
 
 const expected =
   /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
 
-// assert(re.source === expected.source)
+assert(re.source === expected.source)
 
 const sentences = [
   "123-123-1234",
