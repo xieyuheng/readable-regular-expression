@@ -1,4 +1,4 @@
-export function create(reg: RegExp, flag: string): RegExp {
+export function add_flag(reg: RegExp, flag: string): RegExp {
   return new RegExp(reg, flag)
 }
 

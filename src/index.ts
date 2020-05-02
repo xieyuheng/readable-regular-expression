@@ -1,11 +1,11 @@
-export * from "./create"
+export * from "./flag"
+export * from "./escape"
 
-export * from "./primitive/charset"
-export * from "./primitive/boundary"
-export * from "./primitive/range"
+export * from "./primitives/charset"
+export * from "./primitives/boundary"
 
-export * from "./combination/quantifier"
-export * from "./combination/operator"
-export * from "./combination/capture"
+export * from "./combinations/quantifier"
+export * from "./combinations/operator"
+export * from "./combinations/group"
 
 export * as util from "./util"
