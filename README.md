@@ -12,6 +12,9 @@ const rr = require("@forchange/readable-regular-expression")
 // NOTE Enter your phone number.
 //   The expected format is like: `###-###-####`
 
+const unreadable =
+  /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
+
 const sep   = rr.group(/[-\/\.]/)
 const three = rr.exactly(3, rr.digit)
 const four  = rr.exactly(4, rr.digit)
@@ -25,9 +28,6 @@ const re =
         three,
         rr.escape(")"))),
     sep, three, sep, four)
-
-const unreadable =
-  /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
 
 assert(re.source === expected.source)
 
