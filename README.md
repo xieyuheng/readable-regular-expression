@@ -2,6 +2,10 @@
 
 Make regular expression **Readable** again!
 
+## Documents
+
+- Examples: [src/examples](https://git.forchange.cn/cleword/explore/readable-regular-expression/-/tree/master/src/examples)
+
 ## Development
 
 - Try:
