@@ -4,15 +4,18 @@ import rr from "../main"
 // NOTE Enter your phone number.
 //   The expected format is like: `###-###-####`
 
-const sep = rr.group(/[-\/\.]/)
+const sep   = rr.group(/[-\/\.]/)
 const three = rr.exactly(3, rr.digit)
-const four = rr.exactly(4, rr.digit)
+const four  = rr.exactly(4, rr.digit)
 
 const re =
   rr.seq(
     rr.or(
       three,
-      rr.seq(rr.escape("("), rr.group(three), rr.escape(")"))),
+      rr.seq(
+        rr.escape("("),
+        rr.group(three),
+        rr.escape(")"))),
     sep, three, sep, four)
 
 const expected =
