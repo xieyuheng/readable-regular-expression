@@ -17,7 +17,7 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
 }
 
 {
-  const currency_or_punctuation = rr.or(/\p{Sc}/, /\p{P}/)
+  const currency_or_punctuation = rr.or(/\p{Currency_Symbol}/, /\p{Punctuation}/)
   const re = rr.add_flag(currency_or_punctuation, rr.flags.global + rr.flags.unicode)
   assert(util.equal(sentence.match(re), ["¥", "."]))
 }
