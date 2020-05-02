@@ -2,7 +2,8 @@ import assert from "assert"
 import rr from "../main"
 import * as util from "../util"
 
-// NOTE https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
+// NOTE
+//   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
 
 const word_space = rr.seq(rr.one_or_more(rr.word), rr.space)
 const re = rr.add_flag(word_space, rr.flags.global)

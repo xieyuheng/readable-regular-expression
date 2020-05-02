@@ -1,7 +1,8 @@
 import assert from "assert"
 import rr from "../main"
 
-// NOTE https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
+// NOTE
+//   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
 
 const bs = rr.one_or_more(/b/)
 const dbsd = rr.seq(/d/, rr.group(bs), /d/)
