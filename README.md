@@ -4,7 +4,28 @@ Make regular expression **Readable** again!
 
 ## Documents
 
-- Examples: [src/examples](https://git.forchange.cn/cleword/explore/readable-regular-expression/-/tree/master/src/examples)
+``` typescript
+import rr from "@forchange/readable-regular-expression"
+
+const sep   = rr.group(/[-\/\.]/)
+const three = rr.exactly(3, rr.digit)
+const four  = rr.exactly(4, rr.digit)
+
+const re =
+  rr.seq(
+    rr.or(
+      three,
+      rr.seq(
+        rr.escape("("),
+        rr.group(three),
+        rr.escape(")"))),
+    sep, three, sep, four)
+
+const non_readable =
+  /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
+```
+
+- More examples: [src/examples](https://git.forchange.cn/cleword/explore/readable-regular-expression/-/tree/master/src/examples)
 
 ## Development
 
