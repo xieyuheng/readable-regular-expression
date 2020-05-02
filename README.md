@@ -23,10 +23,7 @@ const re =
   rr.seq(
     rr.or(
       three,
-      rr.seq(
-        rr.escape("("),
-        three,
-        rr.escape(")"))),
+      rr.seq(rr.escape("("), three, rr.escape(")"))),
     sep, three, sep, four)
 
 assert(re.source === expected.source)
