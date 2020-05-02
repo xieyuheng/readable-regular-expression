@@ -26,7 +26,7 @@ const re =
         rr.escape(")"))),
     sep, three, sep, four)
 
-const expected =
+const unreadable =
   /(\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
 
 assert(re.source === expected.source)
