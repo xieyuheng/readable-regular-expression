@@ -8,8 +8,4 @@ const re = rr.add_flag(/[aeiouy]/, rr.flag.global)
 
 const vowels = alice_excerpt.match(re)
 
-if (vowels === null) {
-  assert(false)
-} else {
-  assert(vowels.length === 25)
-}
+assert(vowels && vowels.length === 25)
