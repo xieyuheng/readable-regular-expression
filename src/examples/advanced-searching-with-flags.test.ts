@@ -16,8 +16,8 @@ assert(util.equal(results, ["fee ", "fi ", "fo "]))
 
 {
   let results: null | RegExpExecArray = null
+  console.log("// IMPRESSION `re.exec` will do side effect on `re.lastIndex`")
   do {
-    // NOTE `re.exec` will do side effect on `re.lastIndex`
     results = re.exec(str)
     console.log("results   :", results)
     console.log("lastIndex :", re.lastIndex)
