@@ -10,12 +10,7 @@ const four  = rr.exactly(4, rr.digit)
 
 const re =
   rr.seq(
-    rr.or(
-      three,
-      rr.seq(
-        rr.escape("("),
-        three,
-        rr.escape(")"))),
+    rr.or(three, rr.seq("(", three, ")")),
     sep, three, sep, four)
 
 const expected =
