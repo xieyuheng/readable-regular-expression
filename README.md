@@ -41,7 +41,7 @@ const sentences = [
 ]
 
 for (const sentence of sentences)
-  assert(re.exec(sentence))
+  console.table(re.exec(sentence))
 ```
 
 ### More examples
