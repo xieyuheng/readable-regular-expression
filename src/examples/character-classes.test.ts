@@ -4,6 +4,7 @@ import * as util from "../util"
 
 // NOTE
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes
+
 {
   const chess_story = "He played the King in a8 and she moved her Queen in c2."
   const coordinates = rr.seq(rr.word, rr.digit)

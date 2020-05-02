@@ -2,6 +2,9 @@ import assert from "assert"
 import rr from "../main"
 import * as util from "../util"
 
+// NOTE
+//   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
+
 const sentence = "A ticket to 大阪 costs ¥2000 👌."
 
 {

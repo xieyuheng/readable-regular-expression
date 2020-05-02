@@ -2,6 +2,9 @@ import assert from "assert"
 import rr from "../main"
 import * as util from "../util"
 
+// NOTE
+//   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers
+
 {
   const ghost_speak = "booh boooooooh"
   const spooky = rr.seq(/b/, rr.at_least(3, /o/), /h/)
@@ -62,17 +65,17 @@ import * as util from "../util"
 
   const single_letter_word =
     rr.add_flag(
-      rr.seq(rr.boundary, rr.word, rr.boundary)
+      rr.seq(rr.boundary, rr.word, rr.boundary),
       rr.flags.global)
 
   const not_so_long_word =
     rr.add_flag(
-      rr.seq(rr.boundary, rr.at_least_at_most(1, 6, rr.word), rr.boundary)
+      rr.seq(rr.boundary, rr.at_least_at_most(1, 6, rr.word), rr.boundary),
       rr.flags.global)
 
   const loooong_word =
     rr.add_flag(
-      rr.seq(rr.boundary, rr.at_least(13, rr.word), rr.boundary)
+      rr.seq(rr.boundary, rr.at_least(13, rr.word), rr.boundary),
       rr.flags.global)
 
   const sentence = "Why do I have to learn multiplication table?"
