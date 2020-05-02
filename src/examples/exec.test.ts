@@ -1,5 +1,5 @@
-import rr from "../main"
 import assert from "assert"
+import rr from "../main"
 
 // NOTE https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
 

@@ -1,5 +1,5 @@
-import rr from "../main"
 import assert from "assert"
+import rr from "../main"
 
 const alice_excerpt =
   "There was a long silence after this, and Alice could only hear whispers now and then."
