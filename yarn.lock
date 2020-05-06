@@ -182,6 +182,11 @@ path-parse@^1.0.6:
   resolved "https://nexus.forchange.cn/repository/npm-group/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
   integrity sha1-1i27VnlAXXLEc37FhgDp3c8G0kw=
 
+prettier@^2.0.5:
+  version "2.0.5"
+  resolved "https://nexus.forchange.cn/repository/npm-group/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
+  integrity sha1-1tVigkVSQ/L5LMFxZpLAiqMVItQ=
+
 progress@^2.0.3:
   version "2.0.3"
   resolved "https://nexus.forchange.cn/repository/npm-group/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"

@@ -1,4 +1,7 @@
-export function string_find_index(str: string, p: (x: string) => boolean): number {
+export function string_find_index(
+  str: string,
+  p: (x: string) => boolean
+): number {
   let index = 0
   while (index < str.length) {
     let x = str[index]
@@ -20,8 +23,7 @@ export function decorate_line_number(text: string): string {
     let line_number = i // NOTE index from 0 instead of 1
     let line_number_string = line_number.toString()
     line_number_string =
-      " ".repeat(width - line_number_string.length) +
-      line_number_string
+      " ".repeat(width - line_number_string.length) + line_number_string
     decorated += " "
     decorated += line_number_string
     decorated += " |"

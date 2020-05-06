@@ -8,10 +8,10 @@ import * as util from "../util"
 const word_space = rr.seq(rr.one_or_more(rr.word), rr.space)
 const re = rr.add_flag(word_space, rr.flags.global)
 
-const expected = /\w+\s/g;
+const expected = /\w+\s/g
 assert(re.source === expected.source)
 
-const str = "fee  fi  fo  fum";
+const str = "fee  fi  fo  fum"
 const results = str.match(re)
 assert(util.equal(results, ["fee ", "fi ", "fo "]))
 

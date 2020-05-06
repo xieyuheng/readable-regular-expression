@@ -1,13 +1,13 @@
 import assert from "assert"
 import rr from "../main"
 
-const re =
-  rr.seq(
-    rr.group(rr.one_or_more(rr.word)),
-    rr.space,
-    rr.group(rr.one_or_more(rr.word)))
+const re = rr.seq(
+  rr.group(rr.one_or_more(rr.word)),
+  rr.space,
+  rr.group(rr.one_or_more(rr.word))
+)
 
-const expected = /(\w+)\s(\w+)/;
+const expected = /(\w+)\s(\w+)/
 
 assert(re.source === expected.source)
 

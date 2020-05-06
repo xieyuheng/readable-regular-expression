@@ -4,9 +4,7 @@ export function blank_p(blank: string): boolean {
   let result = true
   for (let i of util.range(0, blank.length)) {
     let char = blank[i]
-    if (char !== "\ " &&
-      char !== "\t" &&
-      char !== "\n") {
+    if (char !== " " && char !== "\t" && char !== "\n") {
       return false
     }
   }
@@ -17,8 +15,7 @@ export function empty_line_p(line: string): boolean {
   let result = true
   for (let i of util.range(0, line.length)) {
     let char = line[i]
-    if (char !== "\ " &&
-      char !== "\t") {
+    if (char !== " " && char !== "\t") {
       return false
     }
   }
@@ -26,6 +23,5 @@ export function empty_line_p(line: string): boolean {
 }
 
 export function ignore_line_p(line: string): boolean {
-  return empty_line_p(line) ||
-    line.trimStart().startsWith("//")
+  return empty_line_p(line) || line.trimStart().startsWith("//")
 }

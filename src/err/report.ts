@@ -1,22 +1,14 @@
 export class Report extends Error {
-  constructor(
-    public message_list: Array<string>,
-  ) {
+  constructor(public message_list: Array<string>) {
     super(merge_message_list(message_list))
   }
 
   append(message: string): Report {
-    return new Report([
-      ...this.message_list,
-      message,
-    ])
+    return new Report([...this.message_list, message])
   }
 
   prepend(message: string): Report {
-    return new Report([
-      message,
-      ...this.message_list,
-    ])
+    return new Report([message, ...this.message_list])
   }
 }
 

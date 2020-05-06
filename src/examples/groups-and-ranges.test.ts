@@ -6,23 +6,18 @@ import * as util from "../util"
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges
 
 {
-  const alice_excerpt =
-    "The Caterpillar and Alice looked at each other"
+  const alice_excerpt = "The Caterpillar and Alice looked at each other"
 
-  const without_e =
-    rr.add_flag(
-      rr.seq(rr.boundary, rr.one_or_more(/[a-df-z]/), rr.boundary),
-      rr.flags.global + rr.flags.ignoreCase)
+  const without_e = rr.add_flag(
+    rr.seq(rr.boundary, rr.one_or_more(/[a-df-z]/), rr.boundary),
+    rr.flags.global + rr.flags.ignoreCase
+  )
 
-  assert(
-    util.equal(
-      alice_excerpt.match(without_e),
-      ["and", "at"]))
+  assert(util.equal(alice_excerpt.match(without_e), ["and", "at"]))
 }
 
 {
-  const image_description =
-    "This image has a resolution of 1440×900 pixels."
+  const image_description = "This image has a resolution of 1440×900 pixels."
 
   const digit = rr.group(rr.one_or_more(rr.digit))
   const size = rr.seq(digit, "×", digit)
@@ -53,12 +48,16 @@ import * as util from "../util"
     "first_name: John, last_name: Doe\n" +
     "first_name: Jane, last_name: Smith\n"
 
-  const names =
-    rr.add_flag(
-      rr.seq(
-        "first_name: ", rr.group(rr.one_or_more(rr.word)), ", ",
-        "last_name: ", rr.group(rr.one_or_more(rr.word))),
-      rr.flags.global + rr.flags.multiline)
+  const names = rr.add_flag(
+    rr.seq(
+      "first_name: ",
+      rr.group(rr.one_or_more(rr.word)),
+      ", ",
+      "last_name: ",
+      rr.group(rr.one_or_more(rr.word))
+    ),
+    rr.flags.global + rr.flags.multiline
+  )
 
   let results = null
 
@@ -66,9 +65,8 @@ import * as util from "../util"
 
   do {
     results = names.exec(persons)
-    console.log(results &&
-      `Hello ${results[1]} ${results[2]}`)
-  } while(results)
+    console.log(results && `Hello ${results[1]} ${results[2]}`)
+  } while (results)
 }
 
 {
@@ -78,12 +76,16 @@ import * as util from "../util"
     "first_name: John, last_name: Doe\n" +
     "first_name: Jane, last_name: Smith\n"
 
-  const names =
-    rr.add_flag(
-      rr.seq(
-        "first_name: ", rr.named_group("first_name", rr.one_or_more(rr.word)), ", ",
-        "last_name: ", rr.named_group("last_name", rr.one_or_more(rr.word))),
-      rr.flags.global + rr.flags.multiline)
+  const names = rr.add_flag(
+    rr.seq(
+      "first_name: ",
+      rr.named_group("first_name", rr.one_or_more(rr.word)),
+      ", ",
+      "last_name: ",
+      rr.named_group("last_name", rr.one_or_more(rr.word))
+    ),
+    rr.flags.global + rr.flags.multiline
+  )
 
   let results = null
 
@@ -91,7 +93,10 @@ import * as util from "../util"
 
   do {
     results = names.exec(persons)
-    console.log(results && results.groups &&
-      `Hello ${results.groups.first_name} ${results.groups.last_name}`)
-  } while(results)
+    console.log(
+      results &&
+        results.groups &&
+        `Hello ${results.groups.first_name} ${results.groups.last_name}`
+    )
+  } while (results)
 }

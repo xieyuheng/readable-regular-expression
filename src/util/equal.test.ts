@@ -8,14 +8,8 @@ import * as util from "./index"
 }
 
 {
-  let x = new Map()
-    .set("a", "a")
-    .set("b", "b")
-    .set("c", "c")
-  let y = new Map()
-    .set("c", "c")
-    .set("b", "b")
-    .set("a", "a")
+  let x = new Map().set("a", "a").set("b", "b").set("c", "c")
+  let y = new Map().set("c", "c").set("b", "b").set("a", "a")
   assert(util.equal(x, y))
 }
 

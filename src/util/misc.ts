@@ -25,9 +25,7 @@ export function repeats<T>(f: () => T, n: number): Array<T> {
   return array
 }
 
-export function map2obj<V>(
-  map: Map<string, V>
-): { [key: string]: V } {
+export function map2obj<V>(map: Map<string, V>): { [key: string]: V } {
   let obj: any = {}
   for (let [k, v] of map.entries()) {
     obj[k] = v
@@ -35,9 +33,7 @@ export function map2obj<V>(
   return obj
 }
 
-export function obj2map<V>(
-  obj: { [key: string]: V }
-): Map<string, V> {
+export function obj2map<V>(obj: { [key: string]: V }): Map<string, V> {
   let map = new Map<string, V>()
   for (let k in obj) {
     map.set(k, obj[k])
@@ -48,7 +44,7 @@ export function obj2map<V>(
 export function array2map<V>(array: Array<V>): Map<string, V> {
   let map = new Map()
   let len = array.length / 2
-  assert(len = Math.floor(len))
+  assert((len = Math.floor(len)))
   for (let i of range(0, len)) {
     map.set(array[i], array[i + 1])
   }
@@ -62,9 +58,11 @@ export function array2obj<V>(array: Array<V>): { [key: string]: V } {
 export function map_eq<K, V>(
   x: Map<K, V>,
   y: Map<K, V>,
-  eq: (v: V, w: V) => boolean,
+  eq: (v: V, w: V) => boolean
 ): boolean {
-  if (x.size !== y.size) { return false }
+  if (x.size !== y.size) {
+    return false
+  }
   for (let k of x.keys()) {
     let v = x.get(k)
     let w = y.get(k)
@@ -82,7 +80,7 @@ export function map_eq<K, V>(
 export function obj_eq<K, V>(
   x: { [key: string]: V },
   y: { [key: string]: V },
-  eq: (v: V, w: V) => boolean,
+  eq: (v: V, w: V) => boolean
 ): boolean {
   let keys = Object.keys(x)
   if (Object.keys(y).length !== keys.length) {
@@ -99,9 +97,11 @@ export function obj_eq<K, V>(
 export function array_eq<V>(
   x: Array<V>,
   y: Array<V>,
-  eq: (v: V, w: V) => boolean,
+  eq: (v: V, w: V) => boolean
 ): boolean {
-  if (x.length !== y.length) { return false }
+  if (x.length !== y.length) {
+    return false
+  }
   for (let i of range(0, x.length)) {
     let v = x[i]
     let w = y[i]
