@@ -12,6 +12,10 @@ function watch {
     yarn run watch
 }
 
+function format {
+    yarn run format
+}
+
 function t {
     test_prog_ext node js && \
         test_prog_ext bash sh
