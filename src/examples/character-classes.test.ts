@@ -40,6 +40,12 @@ import * as util from "../util"
 }
 
 {
+  const ascii_symbols = "-=:.,;~!?@#$%^&*+<>()[]{}/|\\"
+  const re = rr.add_flag(rr.ascii_symbol, rr.flags.global)
+  assert(util.equal(ascii_symbols.match(re), ascii_symbols.split("")))
+}
+
+{
   const non_english_text = "Приключения Алисы в Стране чудес"
   const re = /([\u0000-\u0019\u0021-\uFFFF])+/gu
   // BMP goes through U+0000 to U+FFFF but space is U+0020
