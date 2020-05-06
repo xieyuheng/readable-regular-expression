@@ -83,3 +83,27 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
     ])
   )
 }
+
+{
+  // NOTE about chinese character
+
+  const chinese_text = "山川壯麗，物產豐隆，炎黃世胄，東亞稱雄。"
+
+  assert(
+    util.equal(chinese_text.match(/\p{Letter}+/gu), [
+      "山川壯麗",
+      "物產豐隆",
+      "炎黃世胄",
+      "東亞稱雄",
+    ])
+  )
+
+  assert(
+    util.equal(chinese_text.match(/\p{Punctuation}+/gu), [
+      "，",
+      "，",
+      "，",
+      "。",
+    ])
+  )
+}
