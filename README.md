@@ -1,5 +1,7 @@
 # Readable regular expression
 
+Regular expression + the way to do abstraction.
+
 Make regular expression **Readable** again!
 
 ## Documents
