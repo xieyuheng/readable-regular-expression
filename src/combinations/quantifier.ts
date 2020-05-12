@@ -6,7 +6,7 @@ export function one_or_more(re: RegExp): RegExp {
   return new RegExp(re.source + "+")
 }
 
-export function zero_or_one(re: RegExp): RegExp {
+export function option(re: RegExp): RegExp {
   return new RegExp(re.source + "?")
 }
 

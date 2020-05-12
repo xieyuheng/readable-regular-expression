@@ -105,7 +105,7 @@ import * as util from "../util"
   const american = "He asked his neighbor a favor."
 
   const ending = rr.add_flag(
-    rr.seq(rr.one_or_more(rr.word), "o", rr.zero_or_one(/u/), "r"),
+    rr.seq(rr.one_or_more(rr.word), "o", rr.option(/u/), "r"),
     rr.flags.global
   )
 
