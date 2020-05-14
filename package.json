@@ -4,7 +4,7 @@
     "registry": "https://nexus.forchange.cn/repository/npm-private/"
   },
   "main": "lib/main.js",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "build": "npx tsc",
     "watch": "npx tsc --watch",
