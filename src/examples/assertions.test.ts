@@ -29,7 +29,7 @@ import * as util from "../util"
   const re = rr.add_flag(
     rr.seq(
       rr.negative_lookahead(rr.beginning, rr.or("type", "let", "case")),
-      rr.zero_or_more(rr.word)
+      rr.word
     ),
     rr.flags.global
   )
