@@ -56,9 +56,9 @@ export function non_greedy(re: RegExp | string): RegExp {
     throw new Error("Empty RegExp source")
   } else if (
     re.source[re.source.length - 1] === "*" ||
-      re.source[re.source.length - 1] === "+" ||
-      re.source[re.source.length - 1] === "?" ||
-      re.source[re.source.length - 1] === "}"
+    re.source[re.source.length - 1] === "+" ||
+    re.source[re.source.length - 1] === "?" ||
+    re.source[re.source.length - 1] === "}"
   ) {
     return new RegExp(re.source + "?")
   } else {

@@ -25,20 +25,54 @@ import * as util from "../util"
 }
 
 {
-  // NOTE preserved identifiers
-  const re = rr.add_flag(
-    rr.seq(
+  {
+    // NOTE preserved identifiers
+    //   with global flag
+
+    const re = rr.add_flag(
+      rr.seq(
+        rr.negative_lookahead(rr.beginning, rr.or("type", "let", "case")),
+        rr.word
+      ),
+      rr.flags.global
+    )
+
+    assert(util.equal("x".match(re), ["x"]))
+    assert(util.equal("y".match(re), ["y"]))
+
+    assert(util.equal("let".match(re), null))
+    assert(util.equal("type".match(re), null))
+    assert(util.equal("case".match(re), null))
+
+    assert(util.equal(re.exec("let"), null))
+    assert(util.equal(re.exec("type"), null))
+    assert(util.equal(re.exec("case"), null))
+  }
+
+  {
+    const re = rr.seq(
       rr.negative_lookahead(rr.beginning, rr.or("type", "let", "case")),
       rr.word
-    ),
-    rr.flags.global
-  )
+    )
 
-  assert(util.equal("x".match(re), ["x"]))
-  assert(util.equal("y".match(re), ["y"]))
-  assert(util.equal("let".match(re), null))
-  assert(util.equal("type".match(re), null))
-  assert(util.equal("case".match(re), null))
+    {
+      const result = "x".match(re)
+      assert(util.equal(result ? result[0] : null, "x"))
+    }
+
+    {
+      const result = "y".match(re)
+      assert(util.equal(result ? result[0] : null, "y"))
+    }
+
+    assert(util.equal("let".match(re), null))
+    assert(util.equal("type".match(re), null))
+    assert(util.equal("case".match(re), null))
+
+    assert(util.equal(re.exec("let"), null))
+    assert(util.equal(re.exec("type"), null))
+    assert(util.equal(re.exec("case"), null))
+  }
 }
 
 {
