@@ -1,4 +1,4 @@
-- Assertions
+- Assertions -- for negation
   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions
 
 - Chinese punctuation

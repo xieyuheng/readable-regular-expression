@@ -1,6 +1,7 @@
 // NOTE
 //   docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes
 
+export const anychar = /./
 export const word = /\w/
 export const non_word = /\W/
 export const digit = /\d/
