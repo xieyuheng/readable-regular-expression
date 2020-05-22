@@ -1,5 +1,8 @@
 # Readable regular expression
 
+> 皇覽揆余初度兮 肇錫余以嘉名 <br>
+> 名余曰正則兮 字余曰靈均
+
 Regular expression + the way to do abstraction.
 
 Make regular expression **Readable** again!
