@@ -1,6 +1,6 @@
 import assert from "assert"
 import rr from "../main"
-import * as util from "../util"
+import * as ut from "../ut"
 
 // NOTE
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes
@@ -11,7 +11,7 @@ import * as util from "../util"
   const re = rr.add_flag(coordinates, rr.flags.global)
   const expected = /\w\d/g
   assert(re.source === expected.source)
-  assert(util.equal(chess_story.match(re), ["a8", "c2"]))
+  assert(ut.equal(chess_story.match(re), ["a8", "c2"]))
 }
 
 {
@@ -20,7 +20,7 @@ import * as util from "../util"
   const re = rr.add_flag(emoticons, rr.flags.global)
   const expected = /[\u{1F600}-\u{1F64F}]/gu
   assert(re.source === expected.source)
-  assert(util.equal(moods.match(re), ["🙂", "😕", "😢"]))
+  assert(ut.equal(moods.match(re), ["🙂", "😕", "😢"]))
 }
 
 {
@@ -36,13 +36,13 @@ import * as util from "../util"
   const re = rr.add_flag(word_starts_with_a, rr.flags.global)
   const expected = /\b[aA]\w+/g
   assert(re.source === expected.source)
-  assert(util.equal(alice_excerpt.match(re), ["Ada", "and", "at", "all"]))
+  assert(ut.equal(alice_excerpt.match(re), ["Ada", "and", "at", "all"]))
 }
 
 {
   const ascii_symbols = "-=:.,;~!?@#$%^&*+<>()[]{}/|\\"
   const re = rr.add_flag(rr.ascii_symbol, rr.flags.global)
-  assert(util.equal(ascii_symbols.match(re), ascii_symbols.split("")))
+  assert(ut.equal(ascii_symbols.match(re), ascii_symbols.split("")))
 }
 
 {
@@ -50,7 +50,7 @@ import * as util from "../util"
   const re = /([\u0000-\u0019\u0021-\uFFFF])+/gu
   // BMP goes through U+0000 to U+FFFF but space is U+0020
   assert(
-    util.equal(non_english_text.match(re), [
+    ut.equal(non_english_text.match(re), [
       "Приключения",
       "Алисы",
       "в",

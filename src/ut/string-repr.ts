@@ -1,8 +1,8 @@
-import * as util from "./index"
+import * as ut from "./index"
 
 export function blank_repr(blank: string): string {
   let s = ""
-  for (let i of util.range(0, blank.length)) {
+  for (let i of ut.range(0, blank.length)) {
     let char = blank[i]
     if (char === " ") {
       s += "_"

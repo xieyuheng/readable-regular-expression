@@ -1,6 +1,6 @@
 import assert from "assert"
 import rr from "../main"
-import * as util from "../util"
+import * as ut from "../ut"
 
 // NOTE
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
@@ -13,7 +13,7 @@ assert(re.source === expected.source)
 
 const str = "fee  fi  fo  fum"
 const results = str.match(re)
-assert(util.equal(results, ["fee ", "fi ", "fo "]))
+assert(ut.equal(results, ["fee ", "fi ", "fo "]))
 
 {
   let results: null | RegExpExecArray = null

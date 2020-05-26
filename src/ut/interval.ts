@@ -1,4 +1,4 @@
-import * as util from "./index"
+import * as ut from "./index"
 
 // NOTE [x0, x1] not overlap with [y0, y1]
 export function interval_not_overlap_p(

@@ -1,6 +1,6 @@
 import assert from "assert"
 import rr from "../main"
-import * as util from "../util"
+import * as ut from "../ut"
 
 // NOTE
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges
@@ -13,7 +13,7 @@ import * as util from "../util"
     rr.flags.global + rr.flags.ignoreCase
   )
 
-  assert(util.equal(alice_excerpt.match(without_e), ["and", "at"]))
+  assert(ut.equal(alice_excerpt.match(without_e), ["and", "at"]))
 }
 
 {

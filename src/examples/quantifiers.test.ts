@@ -1,6 +1,6 @@
 import assert from "assert"
 import rr from "../main"
-import * as util from "../util"
+import * as ut from "../ut"
 
 // NOTE
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers
@@ -9,7 +9,7 @@ import * as util from "../util"
   const ghost_speak = "booh boooooooh"
   const spooky = rr.seq(/b/, rr.at_least(3, /o/), /h/)
   const re = rr.add_flag(spooky, rr.flags.global)
-  assert(util.equal(ghost_speak.match(spooky), ["boooooooh"]))
+  assert(ut.equal(ghost_speak.match(spooky), ["boooooooh"]))
 }
 
 {
@@ -22,7 +22,7 @@ import * as util from "../util"
   )
 
   assert(
-    util.equal(modified_quote.match(non_greedy), [
+    ut.equal(modified_quote.match(non_greedy), [
       "[He]",
       "[s]",
       "[Alice in Wonderland]",
@@ -35,7 +35,7 @@ import * as util from "../util"
   )
 
   assert(
-    util.equal(modified_quote.match(greedy), [
+    ut.equal(modified_quote.match(greedy), [
       "[He] ha[s] to go read this novel [Alice in Wonderland]",
     ])
   )
@@ -50,7 +50,7 @@ import * as util from "../util"
   )
 
   assert(
-    util.equal(xml.match(non_greedy), ["<foo>", "<bar>", "</bar>", "</foo>"])
+    ut.equal(xml.match(non_greedy), ["<foo>", "<bar>", "</bar>", "</foo>"])
   )
 
   const greedy = rr.add_flag(
@@ -58,7 +58,7 @@ import * as util from "../util"
     rr.flags.global
   )
 
-  assert(util.equal(xml.match(greedy), ["<foo> <bar> new </bar> </foo>"]))
+  assert(ut.equal(xml.match(greedy), ["<foo> <bar> new </bar> </foo>"]))
 }
 
 {
@@ -81,10 +81,10 @@ import * as util from "../util"
 
   const sentence = "Why do I have to learn multiplication table?"
 
-  assert(util.equal(sentence.match(single_letter_word), ["I"]))
+  assert(ut.equal(sentence.match(single_letter_word), ["I"]))
 
   assert(
-    util.equal(sentence.match(not_so_long_word), [
+    ut.equal(sentence.match(not_so_long_word), [
       "Why",
       "do",
       "I",
@@ -95,7 +95,7 @@ import * as util from "../util"
     ])
   )
 
-  assert(util.equal(sentence.match(loooong_word), ["multiplication"]))
+  assert(ut.equal(sentence.match(loooong_word), ["multiplication"]))
 }
 
 {
@@ -109,6 +109,6 @@ import * as util from "../util"
     rr.flags.global
   )
 
-  assert(util.equal(british.match(ending), ["neighbour", "favour"]))
-  assert(util.equal(american.match(ending), ["neighbor", "favor"]))
+  assert(ut.equal(british.match(ending), ["neighbour", "favour"]))
+  assert(ut.equal(american.match(ending), ["neighbor", "favor"]))
 }

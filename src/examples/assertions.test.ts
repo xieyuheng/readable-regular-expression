@@ -1,6 +1,6 @@
 import assert from "assert"
 import rr from "../main"
-import * as util from "../util"
+import * as ut from "../ut"
 
 // NOTE
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions
@@ -8,10 +8,10 @@ import * as util from "../util"
 {
   // NOTE Lookahead assertion
   const re = rr.add_flag(rr.lookahead(/First/, / test/), rr.flags.global)
-  assert(util.equal("First test".match(re), ["First"]))
-  assert(util.equal("First peach".match(re), null))
-  assert(util.equal("This is a First test in a year.".match(re), ["First"]))
-  assert(util.equal("This is a First peach in a month.".match(re), null))
+  assert(ut.equal("First test".match(re), ["First"]))
+  assert(ut.equal("First peach".match(re), null))
+  assert(ut.equal("This is a First test in a year.".match(re), ["First"]))
+  assert(ut.equal("This is a First peach in a month.".match(re), null))
 }
 
 {
@@ -21,7 +21,7 @@ import * as util from "../util"
     rr.negative_lookahead(rr.one_or_more(rr.digit), /\./),
     rr.flags.global
   )
-  assert(util.equal("3.141".match(re), ["141"]))
+  assert(ut.equal("3.141".match(re), ["141"]))
 }
 
 {
@@ -37,16 +37,16 @@ import * as util from "../util"
       rr.flags.global
     )
 
-    assert(util.equal("x".match(re), ["x"]))
-    assert(util.equal("y".match(re), ["y"]))
+    assert(ut.equal("x".match(re), ["x"]))
+    assert(ut.equal("y".match(re), ["y"]))
 
-    assert(util.equal("let".match(re), null))
-    assert(util.equal("type".match(re), null))
-    assert(util.equal("case".match(re), null))
+    assert(ut.equal("let".match(re), null))
+    assert(ut.equal("type".match(re), null))
+    assert(ut.equal("case".match(re), null))
 
-    assert(util.equal(re.exec("let"), null))
-    assert(util.equal(re.exec("type"), null))
-    assert(util.equal(re.exec("case"), null))
+    assert(ut.equal(re.exec("let"), null))
+    assert(ut.equal(re.exec("type"), null))
+    assert(ut.equal(re.exec("case"), null))
   }
 
   {
@@ -57,21 +57,21 @@ import * as util from "../util"
 
     {
       const result = "x".match(re)
-      assert(util.equal(result ? result[0] : null, "x"))
+      assert(ut.equal(result ? result[0] : null, "x"))
     }
 
     {
       const result = "y".match(re)
-      assert(util.equal(result ? result[0] : null, "y"))
+      assert(ut.equal(result ? result[0] : null, "y"))
     }
 
-    assert(util.equal("let".match(re), null))
-    assert(util.equal("type".match(re), null))
-    assert(util.equal("case".match(re), null))
+    assert(ut.equal("let".match(re), null))
+    assert(ut.equal("type".match(re), null))
+    assert(ut.equal("case".match(re), null))
 
-    assert(util.equal(re.exec("let"), null))
-    assert(util.equal(re.exec("type"), null))
-    assert(util.equal(re.exec("case"), null))
+    assert(ut.equal(re.exec("let"), null))
+    assert(ut.equal(re.exec("type"), null))
+    assert(ut.equal(re.exec("case"), null))
   }
 }
 
@@ -80,5 +80,5 @@ import * as util from "../util"
   const oranges = ["ripe orange A ", "green orange B", "ripe orange C"]
   const re = rr.lookbehind("ripe ", "orange")
   const ripe_oranges = oranges.filter((fruit) => fruit.match(re))
-  assert(util.equal(ripe_oranges, ["ripe orange A ", "ripe orange C"]))
+  assert(ut.equal(ripe_oranges, ["ripe orange A ", "ripe orange C"]))
 }

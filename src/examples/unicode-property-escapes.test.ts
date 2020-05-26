@@ -1,6 +1,6 @@
 import assert from "assert"
 import rr from "../main"
-import * as util from "../util"
+import * as ut from "../ut"
 
 // NOTE
 //   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
@@ -10,13 +10,13 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
 {
   const emoji_presentation = /\p{Emoji_Presentation}/
   const re = rr.add_flag(emoji_presentation, rr.flags.global + rr.flags.unicode)
-  assert(util.equal(sentence.match(re), ["👌"]))
+  assert(ut.equal(sentence.match(re), ["👌"]))
 }
 
 {
   const non_latin = rr.one_or_more(/\P{Script_Extensions=Latin}/)
   const re = rr.add_flag(non_latin, rr.flags.global + rr.flags.unicode)
-  assert(util.equal(sentence.match(re), [" ", " ", " 大阪 ", " ¥2000 👌."]))
+  assert(ut.equal(sentence.match(re), [" ", " ", " 大阪 ", " ¥2000 👌."]))
 }
 
 {
@@ -28,7 +28,7 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
     currency_or_punctuation,
     rr.flags.global + rr.flags.unicode
   )
-  assert(util.equal(sentence.match(re), ["¥", "."]))
+  assert(ut.equal(sentence.match(re), ["¥", "."]))
 }
 
 {
@@ -47,10 +47,10 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
   // NOTE Script
 
   const mixed = "aεЛ汉漢"
-  assert(util.equal(mixed.match(/\p{Script=Latin}/gu), ["a"]))
-  assert(util.equal(mixed.match(/\p{Script=Greek}/gu), ["ε"]))
-  assert(util.equal(mixed.match(/\p{Script=Cyrillic}/gu), ["Л"]))
-  assert(util.equal(mixed.match(/\p{Script=Han}/gu), ["汉", "漢"]))
+  assert(ut.equal(mixed.match(/\p{Script=Latin}/gu), ["a"]))
+  assert(ut.equal(mixed.match(/\p{Script=Greek}/gu), ["ε"]))
+  assert(ut.equal(mixed.match(/\p{Script=Cyrillic}/gu), ["Л"]))
+  assert(ut.equal(mixed.match(/\p{Script=Han}/gu), ["汉", "漢"]))
 }
 
 {
@@ -62,7 +62,7 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
   const re = /([\u0000-\u0019\u0021-\uFFFF])+/gu
   // BMP goes through U+0000 to U+FFFF but space is U+0020
   assert(
-    util.equal(non_english_text.match(re), [
+    ut.equal(non_english_text.match(re), [
       "Приключения",
       "Алисы",
       "в",
@@ -74,7 +74,7 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
   // Using Unicode property escapes instead
   const upe = /\p{Letter}+/gu
   assert(
-    util.equal(non_english_text.match(upe), [
+    ut.equal(non_english_text.match(upe), [
       "Приключения",
       "Алисы",
       "в",
@@ -90,7 +90,7 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
   const chinese_text = "山川壯麗，物產豐隆，炎黃世胄，東亞稱雄。"
 
   assert(
-    util.equal(chinese_text.match(/\p{Letter}+/gu), [
+    ut.equal(chinese_text.match(/\p{Letter}+/gu), [
       "山川壯麗",
       "物產豐隆",
       "炎黃世胄",
@@ -99,7 +99,7 @@ const sentence = "A ticket to 大阪 costs ¥2000 👌."
   )
 
   assert(
-    util.equal(chinese_text.match(/\p{Punctuation}+/gu), [
+    ut.equal(chinese_text.match(/\p{Punctuation}+/gu), [
       "，",
       "，",
       "，",

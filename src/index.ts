@@ -10,4 +10,4 @@ export * from "./combinations/operator"
 export * from "./combinations/assertion"
 export * from "./combinations/quantifier"
 
-export * as util from "./util"
+export * as ut from "./ut"
