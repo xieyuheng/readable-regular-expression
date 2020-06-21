@@ -54,12 +54,6 @@ for (const sentence of sentences)
   - `./dev install  # Install dependencies.`
   - `./dev build    # Compile typescript to javascript.`
   - `./dev t        # Run all tests.`
-- Maintainer:
-  - 谢宇恒 / Xie Yuheng
-    - Developing environment:
-      - OS: archlinux
-      - node: v14.1.0
-      - yarn: 1.22.4
 
 ## Community
 
