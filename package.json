@@ -11,11 +11,11 @@
     "format": "npx prettier src --write"
   },
   "devDependencies": {
-    "@types/assert": "^1.4.7",
-    "@types/node": "^14.0.13",
+    "@types/assert": "^1.5.1",
+    "@types/node": "^14.0.14",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
-    "typedoc": "^0.17.7",
+    "typedoc": "^0.17.8",
     "typescript": "^3.9.5"
   },
   "dependencies": {
