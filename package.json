@@ -14,7 +14,7 @@
     "@types/assert": "^1.5.2",
     "@types/node": "^14.14.10",
     "prettier": "^2.2.1",
-    "ts-node": "^9.0.0",
+    "ts-node": "^9.1.1",
     "typedoc": "^0.19.2",
     "typescript": "^4.1.2"
   },
