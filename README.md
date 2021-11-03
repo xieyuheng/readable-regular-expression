@@ -13,7 +13,7 @@ Make regular expression **Readable** again!
 ### Quick start (in nodejs)
 
 ``` javascript
-const rr = require("@forchange/readable-regular-expression")
+const rr = require("@xieyuheng/readable-regular-expression")
 
 // NOTE Enter your phone number.
 //   The expected format is like: `###-###-####`
@@ -45,10 +45,6 @@ for (const sentence of sentences)
   console.table(re.exec(sentence))
 ```
 
-### More examples
-
-- [src/examples](https://git.forchange.cn/cleword/explore/readable-regular-expression/-/tree/master/src/examples)
-
 ## Development
 
 - Try:
@@ -66,7 +62,3 @@ Contributions are welcome, see [current TODO list](TODO.md) for tasks. <br>
 - [Style Guide](STYLE-GUIDE.md)
   - Observe the style of existing code and respect it.
 - [Code of Conduct](CODE-OF-CONDUCT.md)
-
-## License
-
-- ForChange Inc. All rights reserved.
