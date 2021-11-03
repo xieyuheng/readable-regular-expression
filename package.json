@@ -1,6 +1,6 @@
 {
   "name": "@xieyuheng/readable-regular-expression",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "main": "lib/main.js",
   "scripts": {
     "build": "npx tsc",
