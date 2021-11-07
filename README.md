@@ -47,18 +47,21 @@ for (const sentence of sentences)
 
 ## Development
 
-- Try:
-  - `./dev install  # Install dependencies.`
-  - `./dev build    # Compile typescript to javascript.`
-  - `./dev t        # Run all tests.`
+``` bash
+./dev install  # Install dependencies
+./dev build    # Compile typescript to javascript
+./dev t        # Run all tests
+```
 
-## Community
+## Contributions
 
-Contributions are welcome, see [current TODO list](TODO.md) for tasks. <br>
-(Please add yourself to [the AUTHORS list](AUTHORS) if you made any contributions.)
+> Be polite, do not bring negative emotion to others.
 
-- We enforce C4 as collaboration protocol.
-  - [The C4 RFC](https://rfc.zeromq.org/spec:42/C4)
-- [Style Guide](STYLE-GUIDE.md)
-  - Observe the style of existing code and respect it.
-- [Code of Conduct](CODE-OF-CONDUCT.md)
+- [TODO.md](TODO.md)
+- [STYLE-GUIDE.md](STYLE-GUIDE.md)
+- [CODE-OF-CONDUCT.md](CODE-OF-CONDUCT.md)
+- When contributing, add yourself to [AUTHORS](AUTHORS)
+
+## License
+
+- [GPLv3](LICENSE)
