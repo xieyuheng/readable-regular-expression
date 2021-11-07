@@ -21,11 +21,6 @@ function t {
         test_prog_ext bash sh
 }
 
-function docs {
-    mkdir -p docs/api &&
-        npx typedoc src --out docs/api --mode modules --ignoreCompilerErrors
-}
-
 function test_prog_ext {
     prog=$1
     ext=$2
