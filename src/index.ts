@@ -9,5 +9,3 @@ export * from "./combinations/group"
 export * from "./combinations/operator"
 export * from "./combinations/assertion"
 export * from "./combinations/quantifier"
-
-export * as ut from "./ut"
